@@ -12,7 +12,7 @@ describe('surfkeppler-api', function () {
     key: process.env.API_KEY
   })
 
-  const stream = client.sails.offer()
+  const stream = client.sails.outlet()
   let count = 0
   let buffer = []
 
