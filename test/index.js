@@ -12,41 +12,83 @@ describe('surfkeppler-api', function () {
     key: process.env.API_KEY
   })
 
-  const stream = client.sails.outlet()
-  let count = 0
-  let buffer = []
+  describe('multiple pages', function () {
+    const stream = client.sails.outlet()
+    let count = 0
+    let buffer = []
 
-  it('fetch data', function (done) {
-    stream.on('data', function (item) {
-      log(++count, item)
-      buffer.push(item)
-    })
+    it('fetch data', function (done) {
+      stream.on('data', function (item) {
+        log(++count, item)
+        buffer.push(item)
+      })
 
-    stream.on('error', done)
+      stream.on('error', done)
 
-    stream.on('end', function () {
-      (count > 1).should.be.true()
+      stream.on('end', function () {
+        (count > 1).should.be.true()
 
-      buffer.forEach(item => {
-        describe(`${item.title}`, function () {
-          item.should.be.an.Object()
+        buffer.forEach(item => {
+          describe(`${item.title}`, function () {
+            item.should.be.an.Object()
 
-          describe('url', function () {
-            ;[
-              'link',
-              'image'
-            ].forEach(function (prop) {
-              it(prop, () => isAbsoluteUrl(item[prop]).should.be.true())
+            describe('url', function () {
+              ;[
+                'link',
+                'image'
+              ].forEach(function (prop) {
+                it(prop, () => isAbsoluteUrl(item[prop]).should.be.true())
+              })
+            })
+
+            describe('rest of props', function () {
+              it('name', () => item.name.should.be.an.String())
+              it('price', () => item.price.should.be.a.Number())
             })
           })
+        })
+        done()
+      })
+    })
+  })
 
-          describe('rest of props', function () {
-            it('name', () => item.name.should.be.an.String())
-            it('price', () => item.price.should.be.a.Number())
+  describe('one page', function () {
+    const stream = client.boards.outlet()
+    let count = 0
+    let buffer = []
+
+    it('fetch data', function (done) {
+      stream.on('data', function (item) {
+        log(++count, item)
+        buffer.push(item)
+      })
+
+      stream.on('error', done)
+
+      stream.on('end', function () {
+        (count > 1).should.be.true()
+
+        buffer.forEach(item => {
+          describe(`${item.title}`, function () {
+            item.should.be.an.Object()
+
+            describe('url', function () {
+              ;[
+                'link',
+                'image'
+              ].forEach(function (prop) {
+                it(prop, () => isAbsoluteUrl(item[prop]).should.be.true())
+              })
+            })
+
+            describe('rest of props', function () {
+              it('name', () => item.name.should.be.an.String())
+              it('price', () => item.price.should.be.a.Number())
+            })
           })
         })
+        done()
       })
-      done()
     })
   })
 })
