@@ -1,3 +1,13 @@
+<a name="1.0.2"></a>
+## 1.0.2 (2017-02-22)
+
+* Fix path ([f46c577](https://github.com/kikobeats/surfkeppler-api/commit/f46c577))
+* Fix test ([a96a6a8](https://github.com/kikobeats/surfkeppler-api/commit/a96a6a8))
+* Improve pagination ([e90a004](https://github.com/kikobeats/surfkeppler-api/commit/e90a004))
+* Offer → outlet ([2874d73](https://github.com/kikobeats/surfkeppler-api/commit/2874d73))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2017-02-20)
 
