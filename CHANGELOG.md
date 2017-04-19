@@ -1,3 +1,10 @@
+<a name="1.0.3"></a>
+## 1.0.3 (2017-04-19)
+
+* Tests refactor ([228f53c](https://github.com/kikobeats/surfkeppler-api/commit/228f53c))
+
+
+
 <a name="1.0.2"></a>
 ## 1.0.2 (2017-02-22)
 
