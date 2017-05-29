@@ -1,3 +1,11 @@
+<a name="1.0.4"></a>
+## 1.0.4 (2017-05-29)
+
+* fix(package): update got to version 7.0.0 ([2ad72e9](https://github.com/kikobeats/surfkeppler-api/commit/2ad72e9))
+* Update travis builds ([e4935d1](https://github.com/kikobeats/surfkeppler-api/commit/e4935d1))
+
+
+
 <a name="1.0.3"></a>
 ## 1.0.3 (2017-04-19)
 

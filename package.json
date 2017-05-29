@@ -2,7 +2,7 @@
   "name": "surfkeppler-api",
   "description": "Programatic API access for surfkeppler.de",
   "homepage": "https://github.com/Kikobeats/surfkeppler-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "lib",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
